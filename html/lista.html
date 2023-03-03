@@ -1,0 +1,71 @@
+<h1>Listas</h1>
+
+<h2>Aprovados</h2>
+
+<!-- Lista ordenada -->
+<ol>
+  <li>Pedro</li>
+  <li>Bia</li>
+  <li>Ana</li>
+  <li>João</li>
+</ol>
+
+
+<!-- lista não ordenada -->
+<h2>Lista de Compras</h2>
+<ul>
+  <li>Queijo</li>
+  <li>Leite</li>
+  <li>Arroz</li>
+  <li>Pão</li>
+</ul>
+
+<h1>Projeto</h1>
+<ul class="tree">
+  <li>
+    <span wm-folder>backend</span>
+    <ul>
+      <li>
+        <span wm-folder>app</span>
+        <ul>
+          <li>Produto.js</li>
+          <li>Usuario.js</li>
+          <li>Venda.js</li>
+        </ul>
+      </li>
+      <li>
+        <span wm-folder>config</span>
+        <ul>
+          <li>banco.js</li>
+          <li>rotas.js</li>
+          <li>servidor.js</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <span wm-folder>frontend</span>
+    <ul>
+      <li>
+        <span wm-folder>public</span>
+        <ul>
+          <li>app.css</li>
+          <li>app.js</li>
+          <li>index.html</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+</ul>
+
+<script>
+  document.querySelectorAll("[wm-folder]").forEach(folder => {
+    folder.onclick = function (e) {
+      const ul = folder.nextElementSibling;
+      console.log(ul)
+      const d = ul.style.display;
+      ul.style.display = d === "none" ? "block" : "none";
+    }
+  })
+</script>
