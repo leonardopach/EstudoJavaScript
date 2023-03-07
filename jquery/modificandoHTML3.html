@@ -19,7 +19,13 @@
             { nome: 'Carlos', nota: 7.6 },
             { nome: 'Julia', nota: 9.7 }
         ]
-        
+
+        pessoas.forEach(e => {
+            console.log(e)
+            $("#conteudo").append(e.nome)
+        })
+        const lista = $("<ul><li>Sorvete</li></lu>").append(pessoas);
+        $("#conteudo").append(lista)
         // ...
     </script>
 </body>

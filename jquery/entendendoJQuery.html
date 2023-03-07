@@ -14,6 +14,13 @@
     <div>2</div>
 
     <script>
-        // ...
+        $("div").hide(5000).show(5000).fadeOut(5000).fadeIn(5000);
+        console.log($("div").get(0));
+
+        $.fn.fundoVerde = function () {
+            this.css("background-color", "green")
+            return this
+        }
+        $("div").fundoVerde().hide(1000);
     </script>
 </body>
