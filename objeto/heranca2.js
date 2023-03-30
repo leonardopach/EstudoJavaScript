@@ -1,22 +1,46 @@
-const pai = { nome: 'Pedro', corCabelo: 'preto' };
+// Cadeia de protótipos (prototype chain)
+Object.prototype.attr0 = '0' // não faça isso em casa!
 
-const filha1 = Object.create(pai);
-filha1.nome = 'Ana';
-console.log(filha1.corCabelo);
+const avo = { attr1: 'A' }
+const pai = { __proto__: avo, attr2: 'B', attr3: '3' }
+const filho = { __proto__: pai, attr3: 'C' }
+console.log(filho.attr0, filho.attr1, filho.attr2, filho.attr3)
 
-const filha2 = Object.create(pai, {
-  nome: { value: 'Bia', writable: false, enumerable: true }
-});
-
-console.log(filha2.nome);
-filha2.nome = 'Carla';
-console.log(`${filha2.nome} tem cabelo ${filha2.corCabelo}`);
-
-console.log(Object.keys(filha1));
-console.log(Object.keys(filha2));
-
-
-for (let key in filha2) {
-  filha2.hasOwnProperty(key) ?
-    console.log(key) : console.log(`Por herança: ${key}`)
+const carro = {
+    velAtual: 0,
+    velMax: 200,
+    acelerarMais(delta) {
+        if (this.velAtual + delta <= this.velMax) {
+            this.velAtual += delta
+        } else {
+            this.velAtual = this.velMax
+        }
+    },
+    status() {
+        return `${this.velAtual}Km/h de ${this.velMax}Km/h`
+    }
 }
+
+const ferrari = {
+    modelo: 'F40',
+    velMax: 324 // shadowing
+}
+
+const volvo = {
+    modelo: 'V40',
+    status() {
+        return `${this.modelo}: ${super.status()}`
+    }
+}
+
+Object.setPrototypeOf(ferrari, carro)
+Object.setPrototypeOf(volvo, carro)
+
+console.log(ferrari)
+console.log(volvo)
+
+volvo.acelerarMais(100)
+console.log(volvo.status())
+
+ferrari.acelerarMais(300)
+console.log(ferrari.status())

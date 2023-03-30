@@ -1,42 +1,21 @@
-function MeuObjeto() { }
-console.log(MeuObjeto.prototype)
+const pai = { nome: 'Pedro', corCabelo: 'preto' }
 
-const obj1 = new MeuObjeto;
-const obj2 = new MeuObjeto;
-console.log(obj1.__proto__ === obj2.__proto__);
-console.log(MeuObjeto.prototype === obj1.__proto__);
+const filha1 = Object.create(pai)
+filha1.nome = 'Ana'
+console.log(filha1.corCabelo)
 
+const filha2 = Object.create(pai, {
+    nome: { value: 'Bia', writable: false, enumerable: true }
+})
 
-MeuObjeto.prototype.nome = 'Anônimo';
-MeuObjeto.prototype.falar = function() {
-  console.log(`Bom dia! Meu nome é ${this.nome}`);
+console.log(filha2.nome)
+filha2.nome = 'Carla'
+console.log(`${filha2.nome} tem cabelo ${filha2.corCabelo}`)
+
+console.log(Object.keys(filha1))
+console.log(Object.keys(filha2))
+
+for(let key in filha2) {
+    filha2.hasOwnProperty(key) ?
+        console.log(key) : console.log(`Por herança: ${key}`)
 }
-
-obj1.falar();
-
-obj2.nome = "Leonardo";
-obj2.falar();
-
-const obj3 = {};
-obj3.__proto__ = MeuObjeto.prototype;
-obj3.nome = 'Obj3';
-obj3.falar();
-
-console.log((new MeuObjeto).__proto__ === MeuObjeto.prototype);
-console.log(MeuObjeto.__proto__ === Function.prototype);
-
-console.log(typeof String);
-console.log(typeof Array);
-console.log(typeof Object);
-
-String.prototype.reverse = function() {
-  return this.split('').reverse().join('');
-}
-
-console.log('Escola Cod3r'.reverse());
-
-Array.prototype.first = function() {
-  return this[0];
-}
-
-console.log([1, 2, 3, 4, 5, 6].first());
