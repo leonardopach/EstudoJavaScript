@@ -9,6 +9,7 @@
     border: none;
     border-right: var(--border-button);
     border-bottom: var(--border-button);
+    outline: none;
 }
 
 .button:active {
@@ -20,7 +21,7 @@
 }
 
 .button.triple {
-    grid-column: 3;
+    grid-column: span 3;
 }
 
 .button.operation {
