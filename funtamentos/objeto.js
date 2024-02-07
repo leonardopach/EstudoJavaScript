@@ -16,5 +16,7 @@ const prod2 = {
   },
 };
 
+console.log(prod2.nome);
+
 console.log(prod2["obj"]);
 console.log(prod2["obj"]["obj"]);
