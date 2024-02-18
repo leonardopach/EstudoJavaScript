@@ -4,7 +4,6 @@ const numeros1 = 12.5; // number
 let nomePessoa; // undefined
 let sobrenome = null;
 const aprovado = true;
-
 const a = [1, 2];
 const b = a;
 
