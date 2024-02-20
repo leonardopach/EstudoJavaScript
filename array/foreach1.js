@@ -1,10 +1,10 @@
-const aprovados = ['Agatha', 'Aldo', 'Daniel', 'Raquel']
+const aprovados = ["leonardo", "pedro", "lucas", "raquel"];
 
-aprovados.forEach(function(nome, indice) {
-    console.log(`${indice + 1}) ${nome}`)
-})
+aprovados.forEach((nome, indice) => {
+    console.log(`${indice} - ${nome}`);
+});
 
-aprovados.forEach(nome => console.log(nome))
+aprovados.forEach(nome => console.log(nome));
 
-const exibirAprovados = aprovado => console.log(aprovado)
-aprovados.forEach(exibirAprovados)
+const exibirAprovado = aprovado => console.log(aprovado);
+aprovados.forEach(exibirAprovado);

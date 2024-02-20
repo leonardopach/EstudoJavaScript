@@ -1,6 +1,5 @@
-const filhas = ['Ualeskah', 'Cibalena']
-const filhos = ['Uoxiton', 'Uesclei']
-const todos = filhas.concat(filhos)
-console.log(todos, filhas, filhos)
-
-console.log([].concat([1, 2], [3, 4], 5, [[6, 7]]))
+const filhas = ["Silva", "Pedra"];
+const filhos = ["leonardo", "lucas"];
+const todos = filhas.concat(filhos);
+console.log(filhos, filhas);
+console.log(todos);

@@ -1,13 +1,17 @@
 const pessoa = {
-    saudacao: 'Bom dia!',
+    saudacao: 'Bom dia',
+    gritando: 'BOM DIA',
     falar() {
         console.log(this.saudacao)
+    },
+    gritar() {
+        console.log(this.gritando)
     }
 }
 
 pessoa.falar()
 const falar = pessoa.falar
-falar() // conflito entre paradigmas: funcional e OO
+falar()
 
-const falarDePessoa = pessoa.falar.bind(pessoa)
+const falarDePessoa = pessoa.gritar.bind(pessoa)
 falarDePessoa()

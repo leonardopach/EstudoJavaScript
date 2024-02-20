@@ -1,22 +1,22 @@
 // Object.preventExtensions
 const produto = Object.preventExtensions({
-    nome: 'Qualquer', preco: 1.99, tag: 'promoção'
-})
-console.log('Extensível:', Object.isExtensible(produto))
+    nome: "Qualquer",
+    preco: 1.99,
+    tag: "Promocao",
+});
 
-produto.nome = 'Borracha'
-produto.descricao = 'Borracha escolar branca'
-delete produto.tag
-console.log(produto)
+console.log("Extensivel:", Object.isExtensible(produto));
+produto.nome = "borracha";
+produto.descricao = "Borracha escolar";
+delete produto.tag;
+console.log(produto);
 
 // Object.seal
-const pessoa = { nome: 'Juliana', idade: 35 }
-Object.seal(pessoa)
-console.log('Selado:', Object.isSealed(pessoa))
+const pessoa = { nome: "Juliana", idade: 35 };
+Object.seal(pessoa);
+console.log("Selado: ", Object.isSealed(pessoa));
 
-pessoa.sobrenome = 'Silva'
-delete pessoa.nome
-pessoa.idade = 29
-console.log(pessoa)
-
-// Object.freeze = selado + valores constantes
+pessoa.sobrenome = "Silva";
+delete pessoa.nome;
+pessoa.idade = 26;
+console.log(pessoa);

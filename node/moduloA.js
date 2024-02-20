@@ -1,5 +1,3 @@
-console.log(this)
-
-this.ola = 'Fala Pessoal'
-exports.bemVindo = 'Bem vindo ao node!'
-module.exports.ateLogo = 'Até próximo exemplo'
+this.ola = "Fala pessoal";
+exports.bemVindo = "Bem vindo ao node!";
+module.exports.ateLogo = "Ate a proxima";
