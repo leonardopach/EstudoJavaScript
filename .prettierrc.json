@@ -1,11 +1,11 @@
 {
-    "trailingComma": "es5",
-    "semi": true,
-    "doubleQuote": true,
-    "tabWidth": 4,
-    "printWidth": 80,
-    "quoteProps": "consistent",
-    "bracketSpacing": true,
-    "bracketSameLine": true,
-    "arrowParens": "always"
+  "trailingComma": "es5",
+  "semi": true,
+  "doubleQuote": true,
+  "tabWidth": 2,
+  "printWidth": 80,
+  "quoteProps": "consistent",
+  "bracketSpacing": true,
+  "bracketSameLine": true,
+  "arrowParens": "always"
 }
