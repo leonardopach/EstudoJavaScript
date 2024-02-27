@@ -19,13 +19,6 @@ async function carregaPagina(el) {
     } catch (error) {
         console.log(error);
     }
-    // fetch(href)
-    //     .then((res) => {
-    //         if (res.status !== 200) throw new Error("Erro 404");
-    //         return res.text();
-    //     })
-    //     .then((html) => carregaResultado(html))
-    //     .catch((e) => console.log(e));
 }
 function carregaResultado(response) {
     const resultado = document.querySelector(".resultado");
