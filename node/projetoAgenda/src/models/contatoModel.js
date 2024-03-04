@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { async } = require("regenerator-runtime");
 const validator = require("validator");
 
 const ContatoSchema = new mongoose.Schema({
@@ -16,6 +17,7 @@ function Contato(body) {
   this.errors = [];
   this.contato = null;
 }
+
 Contato.prototype.register = async function () {
   this.valida();
   if (this.errors.length > 0) return;
@@ -48,6 +50,33 @@ Contato.prototype.cleanUp = function () {
     email: this.body.email,
     telefone: this.body.telefone,
   };
+};
+
+Contato.prototype.edit = async function (id) {
+  if (typeof id !== "string") return;
+  this.valida();
+  if (this.errors.length > 0) return;
+  this.contato = await ContatoModel.findByIdAndUpdate(id, this.body, {
+    new: true,
+  });
+};
+
+// Metodos estaticos
+Contato.buscarPorId = async function (id) {
+  if (typeof id !== "string") return;
+  const contato = await ContatoModel.findById(id);
+  return contato;
+};
+
+Contato.buscarContatos = async function () {
+  const contatos = await ContatoModel.find().sort({ criadoEm: -1 });
+  return contatos;
+};
+
+Contato.delete = async function (id) {
+  if (typeof id !== "string") return;
+  const contatos = await ContatoModel.findOneAndDelete({ _id: id });
+  return contatos;
 };
 
 module.exports = Contato;
