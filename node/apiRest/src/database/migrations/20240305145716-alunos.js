@@ -1,5 +1,6 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
+<<<<<<< HEAD
     return queryInterface.createTable('alunos', {
       id: {
         type: Sequelize.INTEGER,
@@ -40,6 +41,9 @@ module.exports = {
         allowNull: false,
       },
     });
+=======
+    return queryInterface.createTable('alunos', { id: Sequelize.INTEGER });
+>>>>>>> 8a489c392e8da5a2345f192d646798670dd2b6e6
   },
 
   down(queryInterface) {
