@@ -2,15 +2,10 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-<<<<<<< HEAD
 import './src/database';
 import express from 'express';
 import homeRoutes from './src/routes/homeRoutes';
 import userRoutes from './src/routes/userRoutes';
-=======
-import express from 'express';
-import homeRoutes from './src/routes/homeRoutes';
->>>>>>> 8a489c392e8da5a2345f192d646798670dd2b6e6
 
 class App {
   constructor() {
@@ -26,10 +21,7 @@ class App {
 
   routes() {
     this.app.use('/', homeRoutes);
-<<<<<<< HEAD
     this.app.use('/users', userRoutes);
-=======
->>>>>>> 8a489c392e8da5a2345f192d646798670dd2b6e6
   }
 }
 
