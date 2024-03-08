@@ -8,7 +8,8 @@ export default class Aluno extends Model {
           type: Sequelize.STRING,
           defaultValue: '',
           validate: {
-            isEmail: {
+            len: {
+              args: [3, 55],
               msg: 'E-mail invalido',
             },
           },
@@ -17,7 +18,8 @@ export default class Aluno extends Model {
           type: Sequelize.STRING,
           defaultValue: '',
           validate: {
-            isEmail: {
+            len: {
+              args: [3, 55],
               msg: 'E-mail invalido',
             },
           },
@@ -25,6 +27,9 @@ export default class Aluno extends Model {
         email: {
           type: Sequelize.STRING,
           defaultValue: '',
+          unique: {
+            msg: 'Email ja existe',
+          },
           validate: {
             isEmail: {
               msg: 'E-mail invalido',
