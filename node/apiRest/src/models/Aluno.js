@@ -9,8 +9,8 @@ export default class Aluno extends Model {
           defaultValue: '',
           validate: {
             len: {
-              args: [3, 55],
-              msg: 'E-mail invalido',
+              args: [3, 255],
+              msg: 'O nome precisa ser entre 5 a 255 caracter',
             },
           },
         },
@@ -19,8 +19,8 @@ export default class Aluno extends Model {
           defaultValue: '',
           validate: {
             len: {
-              args: [3, 55],
-              msg: 'E-mail invalido',
+              args: [5, 255],
+              msg: 'O sobrenome precisa ser entre 5 a 255 caracter',
             },
           },
         },
@@ -67,5 +67,8 @@ export default class Aluno extends Model {
       { sequelize },
     );
     return this;
+  }
+  static associate(models) {
+    this.hasMany(models.Foto, { foreignKey: 'aluno_id' });
   }
 }
