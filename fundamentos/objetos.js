@@ -7,14 +7,14 @@ prod1["Desconto Legal"] = 0.4;
 console.log(prod1);
 
 const prod2 = {
-  nome: "Camisa Polo",
-  preco: 79.9,
-  obj: {
-    blabla: 1,
+    nome: "Camisa Polo",
+    preco: 79.9,
     obj: {
-      blabla: 2,
+        blabla: 1,
+        obj: {
+            blabla: 2,
+        },
     },
-  },
 };
 
 console.log(prod2);
