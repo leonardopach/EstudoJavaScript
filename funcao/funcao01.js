@@ -43,3 +43,5 @@ function soma(a, b) {
 }
 
 soma(5, 2)(3);
+const cincoMais = soma(2, 3);
+cincoMais(3);
