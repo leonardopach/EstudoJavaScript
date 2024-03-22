@@ -1,8 +1,29 @@
 let romanToInt = function (s) {
-    let tamanho = s.toUpperCase().split("");
-    if ((tamanho === "I" && tamanho.length > 1) || tamanho.length <= 4) {
-        console.log(tamanho.length);
-    }
-};
+    const romanNumerals = {
+        I: 1,
+        V: 5,
+        X: 10,
+        L: 50,
+        C: 100,
+        D: 500,
+        M: 1000,
+    };
+    let total = 0;
+    let prevValue = 0;
 
-romanToInt("iiiar");
+    for (let i = s.length - 1; i >= 0; i--) {
+        let upper = s.toUpperCase();
+        let currentValue = romanNumerals[upper[i]];
+        if (currentValue < prevValue) {
+            total -= currentValue;
+        } else {
+            total += currentValue;
+        }
+        prevValue = currentValue;
+    }
+
+    return total;
+};
+console.log(romanToInt("iIi"));
+console.log(romanToInt("LVIII"));
+console.log(romanToInt("MCMXCIV"));
